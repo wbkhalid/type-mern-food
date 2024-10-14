@@ -73,17 +73,20 @@ const Login = () => {
                 </div>
 
 
-                <Button type='submit' className='w-full bg-orange hover:bg-hoverOrange'>
+                <Button type='submit' disabled={loading} className='w-full bg-orange hover:bg-hoverOrange'>
                     {loading ? <Loader2 className='animate-spin w-5 h-5' /> : 'Login'}
                 </Button>
+
+                <div className='text-center mt-3'>
+
+                    <Link to='/forgot-password' className='text-blue-500 hover:underline'>Forgot Password</Link>
+                </div>
 
                 <Separator className='my-4' />
 
                 <p>Do not have an account? <Link to='/signup' className='text-blue-500'>SignUp</Link></p>
 
             </form>
-
-
 
         </div>
     )

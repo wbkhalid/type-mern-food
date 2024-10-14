@@ -103,7 +103,7 @@ const SignUp = () => {
           }
         </div>
 
-        <Button type='submit' className='w-full bg-orange hover:bg-hoverOrange'>
+        <Button type='submit' disabled={loading} className='w-full bg-orange hover:bg-hoverOrange'>
           {loading ? <Loader2 className='animate-spin w-5 h-5' /> : 'Sign Up'}
         </Button>
 
