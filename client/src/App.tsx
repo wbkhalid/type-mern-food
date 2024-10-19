@@ -1,17 +1,33 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Login from "./auth/Login"
-import MainLayout from "./MainLayout"
 import SignUp from "./auth/SignUp"
 import ForgotPassword from "./auth/ForgotPassword"
 import ResetPassword from "./auth/ResetPassword"
 import VerifyEmail from "./auth/VerifyEmail"
-import Navbar from "./components/Navbar"
+import MainLayout from "./layout/MainLayout"
+import HereSection from "./components/HeroSection"
+import Profile from "./components/Profile"
+import SearchPage from "./components/SearchPage"
 
 const App = () => {
   const appRouter = createBrowserRouter([
     {
       path: '/',
-      element: <Navbar />
+      element: <MainLayout />,
+      children: [
+        {
+          path: '/',
+          element: <HereSection />,
+        },
+        {
+          path: '/profile',
+          element: <Profile />,
+        },
+        {
+          path: '/search/:id',
+          element: <SearchPage />,
+        }
+      ]
     },
     {
       path: '/login',
